@@ -44,7 +44,7 @@ const App: Component = () => {
           <button
             type="submit"
             disabled={isSending() || !newMessage().trim()}
-            class="mt-2 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-gray-700 disabled:bg-gray-400 w-full text-lg font-semibold"
+            class="mt-2 px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-700 disabled:bg-gray-400 w-full text-lg font-semibold"
           >
           send
           </button>
