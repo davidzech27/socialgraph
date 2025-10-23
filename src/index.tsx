@@ -4,6 +4,10 @@ import { render } from 'solid-js/web';
 import 'solid-devtools';
 
 import App from './App';
+import { ConvexClient } from 'convex/browser';
+import { ConvexContext } from './convex';
+
+const convex = new ConvexClient(import.meta.env.VITE_CONVEX_URL as string);
 
 const root = document.getElementById('root');
 
@@ -13,4 +17,11 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   );
 }
 
-render(() => <App />, root!);
+render(
+  () => (
+    <ConvexContext.Provider value={convex}>
+      <App />
+    </ConvexContext.Provider>
+  ),
+  root!
+);
